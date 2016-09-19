@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  <head>
+    <title>Calculator</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="demo.css"/>
+    <link rel="apple-touch-icon" href="alu.png"/>
+    <link rel="apple-touch-icon-precomposed" href="alu.png"/>
+    
+  </head>
+  <body> 
+    <h1>Calculator</h1>
+    <form id="calculator" class="calcForm" name="Calculator">
+      <input type="text" class="calcForm" id="numInput" placeholder="0"></>
+      <div class="calcRow">
+        <input type="button" class="calcButton" value="7" onclick="process(7)" />
+        <input type="button" class="calcButton" value="8" onclick="process(8)" />
+        <input type="button" class="calcButton" value="9" onclick="process(9)" />
+      </div>
+      <div class="calcRow">
+        <input type="button" class="calcButton" value="4" onclick="process(4)" />
+        <input type="button" class="calcButton" value="5" onclick="process(5)" />
+        <input type="button" class="calcButton" value="6" onclick="process(6)" />
+      </div>
+       <div class="calcRow">
+        <input type="button" class="calcButton" value="1" onclick="process(1)" />
+        <input type="button" class="calcButton" value="2" onclick="process(2)" />
+        <input type="button" class="calcButton" value="3" onclick="process(3)" />
+      </div>
+      <div class="calcRow">
+        <input type="button" class="calcButton" value="=" onclick="process('=')" />
+        <input type="button" class="calcButton" value="0" onclick="process('0')" />
+        <input type="button" class="calcButton" value="c" onclick="process('c')" />
+      </div>
+      <div class="calcRow">
+        <input type="button" class="calcButton" value="+" onclick="process('+')" />
+        <input type="button" class="calcButton" value="-" onclick="process('-')" />
+        <input type="button" class="calcButton" value="x" onclick="process('x')" />
+      </div>
+
+    </form>
+    <script type="text/javascript" src="logic.js"></script>
+  </body>
+</html>

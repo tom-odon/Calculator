@@ -81,8 +81,13 @@ function evalDigit(c) {
 }
 
 function handleKeyPress(e) {
-	e = e || window.event;
-
+	var keyCodeVal = e.keyCode;
+	if(keyCodeVal >= 48 && keyCodeVal <= 57) {
+		var numValue = Math.abs(48 - keyCodeVal);
+		process(numValue);
+		console.log("Key value: " + numValue);
+	}
+	//FINISH the rest!
 }
 
 window.onload = init;
@@ -90,8 +95,7 @@ window.onload = init;
 function init(){
 
 	document.onkeydown = function(evt) {
-		evt = evt || window.event;
-		handleKeyPress()
+		handleKeyPress(evt);
 	}
 }
 

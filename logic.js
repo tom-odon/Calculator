@@ -80,23 +80,40 @@ function evalDigit(c) {
     return c == 'c';
 }
 
-function handleKeyPress(e) {
-	var keyCodeVal = e.keyCode;
-	if(keyCodeVal >= 48 && keyCodeVal <= 57) {
-		var numValue = Math.abs(48 - keyCodeVal);
-		process(numValue);
+//passes event, but char isn't readable.
+function handleKeyPress(e) {	
+	console.log("keypress called\n");
+	var keyChar = e.key;
+	console.log("key: " + e.key);
+	if(keyChar >= 0 && keyChar <= 9) {
+		console.log("number pressed");
+		var numValue = Math.abs(48 - keyChar);
+		process(keyChar);
 		console.log("Key value: " + numValue);
 	}
-	//FINISH the rest!
+	else if(keyChar == "=" || e.keyCode == 13 ) {
+		process("=");
+	}
+	else if(keyChar == "+") {
+		process("+");
+	}
+	else if(keyChar == "-" ) {
+		process("-");
+	}
+	else if(keyChar == "x" || keyChar == "X" || keyChar == "*"){
+		process("x");
+	}
+	else if(keyChar == "c" || keyChar == "C"){
+		process("c");
+	}
 }
 
 window.onload = init;
 
+//works OK
 function init(){
-
-	document.onkeydown = function(evt) {
-		handleKeyPress(evt);
-	}
+	document.onkeypress = handleKeyPress;
+	
 }
 
 
